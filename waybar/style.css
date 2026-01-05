@@ -1,0 +1,61 @@
+*{
+    font-family: "Terminus";
+    font-size: 16px;
+    min-height: 16px;
+    min-width: 0;
+}
+#waybar {
+    background: rgba(22, 22, 22, 0.9);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 0;
+}
+#workspaces{
+    margin:0px 4px;
+
+    min-width: 0;
+}
+#workspaces button{
+    border-radius: 0px;
+    margin: 0px;
+    padding: 4px;
+    min-width: 0;
+
+}
+#battery{
+    margin: 0px -1px 2px -1px;
+}
+
+#custom-open{
+    margin: 0px -2px 0px 0px;
+}
+#custom-close{
+    margin: 0px 0px 0px -2px;
+}
+#workspaces button.active{
+    background: rgba(33,33,33, 0.8);
+    min-width: 0px;
+
+    margin: 0px;
+}
+#mpd, #bluetooth, #tray, #language, #brightvol, #pulseaudio, #clock{
+    margin: 0px 8px;
+    padding: 0px 2px;
+}
+#mpd.paused {
+    color: #959595;
+
+}
+
+#mpd.stopped {
+    color: #959595;
+}
+
+
+
+
+

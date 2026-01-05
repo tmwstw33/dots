@@ -1,0 +1,46 @@
+* {
+
+    background-color:      #0f0f10;
+    text-color:           #c5c3c5;
+    font:            "Terminus 10";
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left:2px;
+    padding-right:2px;
+}
+window {
+    anchor:     north;
+    location:   westnorth;
+    width:      45%;
+    padding:    4px;
+    children:   [ horibox ];
+}
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+prompt{
+    color: #70896E;
+    padding: 0px 4px;
+    margin: 2px 2px 2px 0px;
+}
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      30;
+}
+entry {
+    expand:     true;
+    width:      10em;
+}
+element {
+    padding: 0px 2px;
+}
+element selected {
+    color: #70896E;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}

@@ -1,0 +1,110 @@
+{   
+    "layer": "top",
+    "width": 1024,
+    "expand-center": true,
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-left":["custom/open","hyprland/workspaces","custom/close","custom/open", "mpd", "custom/close"],
+    "modules-right":["clock","group/rightside"],
+    "mpd":{
+        "format": "{stateIcon} {title}",
+        "state-icons":{
+            "playing": "->",
+            "paused": "//"
+
+        },
+        "max-length": 50,
+        "on-click":"mpc toggle",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format":"{title} by {artist}",
+    },
+    "clock":{
+        "format":"{:%A %H:%M}",
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5,
+
+    },
+    "hyprland/workspaces":{
+        "format": "{icon}",
+    },
+    "custom/close":{
+        "format":"]",
+        "tooltip":false,
+    },
+    "custom/open":{
+        "format":"[",
+
+        "tooltip":false,
+    },
+    "custom/br":{
+        "format":"BR",
+
+        "tooltip":false,
+    },
+    "custom/bat":{
+        "format":"BAT",
+
+        "tooltip":false,
+
+    },
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+            "format": "{icon}",
+            "format-icons":["█░░░░", "██░░░","███░░","████░","█████"],
+            "tooltip-format":"{capacity}",
+	},
+    "hyprland/window":{
+        "format": "{title}",
+        "max-length": 32,
+        "expand": true,
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "format": "V:{volume}%",
+      "tooltip-format":"{volume}",
+    },
+    "network":{
+        "format-ethernet":"ethernet:{ifname}",
+        "format-wifi": "wifi:{essid}",
+        "format":"not connected :(",
+    },
+    "bluetooth": {
+        "format": "BT:{icon}",
+        "format-icons":{
+            "enabled": "E",
+            "disabled": "D"
+        },
+        "on-click": "blueman-manager",
+    },
+    "backlight":{
+
+      "format": "BR:{percent}%",
+    },
+    "group/rightside":{
+        "orientation":"horizontal",
+        "modules": [
+            "bluetooth",
+            "tray",
+            "hyprland/language",
+            "backlight",
+            "pulseaudio",
+            "custom/open",
+            "battery",
+            "custom/close",
+        ]
+    },
+    
+    "hyprland/language":{
+        "format": "{short}",
+    }
+
+
+
+
+}
