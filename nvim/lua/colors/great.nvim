@@ -1,0 +1,21 @@
+local lush = require('lush')
+local hsl = lush.hsl
+
+return lush(function()
+  return {
+    Normal       { fg = hsl(180, 10, 80), bg = hsl(0, 0, 15) }, -- default text
+    Comment      { fg = hsl(120, 10, 50), gui = 'italic' },     -- comments
+    Constant     { fg = hsl(50, 80, 65) },                      -- numbers, booleans
+    String       { fg = hsl(100, 60, 70) },                     -- string literals
+    Identifier   { fg = hsl(200, 50, 75) },                     -- variable names
+    Function     { fg = hsl(300, 70, 70) },                     -- function names
+    Statement    { fg = hsl(0, 80, 70), gui = 'bold' },         -- keywords
+    Type         { fg = hsl(220, 40, 70) },                     -- types
+    Special      { fg = hsl(180, 60, 65) },                     -- operators, special chars
+    CursorLine   { bg = hsl(0, 0, 20) },
+    LineNr       { fg = hsl(0, 0, 50) },
+    CursorLineNr { fg = hsl(50, 80, 70), gui = 'bold' },
+    Visual       { bg = hsl(180, 40, 30) },
+    -- You can keep adding more highlight groups here...
+  }
+end)
