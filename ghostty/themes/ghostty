@@ -1,12 +1,12 @@
 # Ghostty theme – based on your Lush scheme
 
-background = #0d0f12
+background = #090E13
 foreground = #f2e6ff
 cursor-color = #f2e6ff
 selection-background = #cdb4db
 selection-foreground = #0d0f12
 
-palette = 0=#0d0f12 
+palette = 0=#090E13
 palette = 1=#e06c75
 palette = 2=#8b9d83 
 palette = 3=#70877f 

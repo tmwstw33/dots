@@ -26,7 +26,7 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 # font-family = Iosevka
-font-family = "JetBrainsMono NF"
+font-family = Lilex
 font-size = 10
 keybind=ctrl+shift+o=ignore
 # window-padding-x = 2
@@ -49,13 +49,13 @@ keybind=ctrl+shift+o=ignore
 # # Some config options have unique syntaxes for their value,
 # # which is explained in the docs for that config option.
 # # Just for example:
-theme = kanso-zen
-gtk-titlebar = false
+theme = new
+gtk-titlebar = true
 gtk-wide-tabs = false
 gtk-titlebar-hide-when-maximized = true
 gtk-titlebar-style = native
-cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
-background-opacity = 0.95
-background-blur-radius = 20
+window-decoration = none
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
