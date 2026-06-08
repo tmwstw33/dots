@@ -1,0 +1,42 @@
+# add_newline = false
+#
+# format = """
+# $all$directory$character
+# """
+#
+# [directory]
+# format = "[ $path ]($style)"
+# style = "bg:#222222 fg:white"
+# truncation_length = 3
+# truncate_to_repo = true
+#
+# [character]
+# success_symbol = ""
+# error_symbol = ""
+#
+#
+# [git_branch]
+# format = "[$branch]($style) "
+# style = "dimmed white"
+#
+# symbol = ""
+#
+# [git_status]
+# disabled = true
+add_newline = false
+
+format = """
+$directory$git_branch
+"""
+
+[directory]
+format = "[ $path ]($style) "
+style = "bg:#222222 fg:#b0b0b0"
+
+truncate_to_repo = false
+
+[git_branch]
+format = "[($branch)]($style) "
+style = "fg:#666666"
+
+symbol = ""

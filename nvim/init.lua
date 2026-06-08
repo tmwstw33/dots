@@ -3,7 +3,7 @@ vim.diagnostic.config({
         current_line = true
     }
 })
-
+vim.opt.cursorline = true
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.o.incsearch = true
 vim.o.clipboard = "unnamedplus"
@@ -12,8 +12,7 @@ vim.o.laststatus = 3
 vim.cmd('set background=dark')
 vim.o.termguicolors = true
 vim.o.nu = true
-vim.o.relativenumber = true
-vim.o.signcolumn = "yes"
+vim.o.relativenumber = true vim.o.signcolumn = "yes"
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wrap = false
@@ -25,12 +24,17 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 vim.pack.add({
+    "https://github.com/mason-org/mason.nvim.git",
+    "https://github.com/mason-org/mason-lspconfig.nvim.git",
+    "https://github.com/kungfusheep/mfd.nvim.git",
+    "https://github.com/rktjmp/lush.nvim.git",
     { src = "https://github.com/nvim-lua/plenary.nvim",                    load = true },
     "https://github.com/nvim-mini/mini.statusline.git",
     "https://github.com/gmr458/cold.nvim.git",
     "https://github.com/nvim-mini/mini.tabline.git",
     "https://github.com/stevearc/oil.nvim.git",
     "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/craftzdog/solarized-osaka.nvim.git",
     "https://github.com/j-hui/fidget.nvim.git",
     "https://github.com/windwp/nvim-autopairs.git",
     "https://github.com/nvim-tree/nvim-web-devicons.git",
@@ -38,6 +42,7 @@ vim.pack.add({
     "https://github.com/blazkowolf/gruber-darker.nvim.git",
     "https://github.com/xero/miasma.nvim.git",
     "https://github.com/aktersnurra/no-clown-fiesta.nvim.git",
+    "https://github.com/zenbones-theme/zenbones.nvim.git",
     {
         src = "https://github.com/saghen/blink.cmp",
         version = vim.version.range("1.*"),
@@ -59,41 +64,6 @@ require("oil").setup({
 })
 require("mini.tabline").setup({
 })
-
-
-vim.lsp.config('lua_ls', {
-    settings = {
-        Lua = {
-            runtime = {
-                version = 'LuaJIT',
-            },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false,
-            },
-        },
-    },
-})
-
-vim.lsp.enable('basedpyright')
-vim.lsp.enable('gopls')
-vim.lsp.enable('lua_ls')
-require("telescope").setup {
-    defaults = {
-        mappings = {
-            i = {
-                ["<C-h>"] = "which_key"
-            }
-        }
-    },
-
-    pickers = {
-    },
-    extensions = {
-    }
-
-}
-
 
 require 'blink.cmp'.setup({
     completion = {
@@ -130,4 +100,8 @@ vim.keymap.set("n", "<leader>fw", builtin.grep_string)
 vim.lsp.config["*"] = {
     capabilities = require("blink.cmp").get_lsp_capabilities(),
 }
-vim.cmd('colorscheme cold')
+vim.cmd('colorscheme no-clown-fiesta-dark')
+require("mason").setup()
+require("mason-lspconfig").setup {
+    automatic_enable = true
+}

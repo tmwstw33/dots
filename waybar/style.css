@@ -1,0 +1,110 @@
+/* ── palette ──────────────────────────────────
+   bg        #1b1b1b   near-black, GNOME-like
+   fg        #cccccc
+   dim       #6a6a6a
+   accent    #62b086   void-green
+   accent-2  #478061   void-dark-green
+   warn      #e0a85e
+   crit      #ff6b6b
+─────────────────────────────────────────────── */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "CaskaydiaCove Nerd Font", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1b1b1b;
+    color: #cccccc;
+}
+
+/* ── workspaces ─────────────────────────────── */
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    margin: 0;
+    color: #5a5a5a;
+    background: transparent;
+    transition: color 0.2s ease;
+}
+
+#workspaces button:hover {
+    color: #cccccc;
+    background: transparent;
+}
+
+#workspaces button.focused {
+    color: #62b086;
+}
+
+#workspaces button.visible {
+    color: #8a8a8a;
+}
+
+#workspaces button.urgent {
+    color: #ff6b6b;
+}
+
+/* ── center clock (GNOME signature) ─────────── */
+#clock {
+    font-weight: bold;
+    color: #e6e6e6;
+    padding: 0 12px;
+    letter-spacing: 1px;
+}
+
+/* ── right side: flat, dim, minimal ─────────── */
+#language,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+    padding: 0 10px;
+    color: #cccccc;
+    background: transparent;
+}
+
+/* keyboard layout: void-green accent */
+#language {
+    color: #62b086;
+    font-weight: bold;
+}
+
+#network {
+    color: #9aa0a6;
+}
+
+#pulseaudio.muted {
+    color: #6a6a6a;
+}
+
+#battery.warning {
+    color: #e0a85e;
+}
+
+#battery.critical {
+    color: #ff6b6b;
+}
+
+#sway-mode {
+    color: #62b086;
+    font-style: italic;
+    padding: 0 10px;
+}
+
+/* ── tooltip ────────────────────────────────── */
+tooltip {
+    background: #1b1b1b;
+    border: 1px solid #478061;
+}
+
+tooltip label {
+    color: #fafafa;
+    font-family: monospace;
+}

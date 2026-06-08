@@ -1,0 +1,70 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 30,
+	"spacing": 4,
+
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": ["clock"],
+	"modules-right": ["sway/language", "pulseaudio", "network", "battery", "tray"],
+
+	"sway/workspaces": {
+		"format": "{icon}",
+		"disable-scroll": false,
+		"all-outputs": true,
+		"format-icons": {
+			"1": "web",
+			"2": "dev",
+			"3": "msg",
+			"4": "mus",
+			"default": "opt"
+		}
+	},
+
+	"sway/mode": {
+		"format": "{}"
+	},
+
+	"sway/language": {
+		"format": "{short}",
+		"tooltip-format": "{long}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+	},
+
+	"clock": {
+		"interval": 1,
+		"format": "{:%a  %H:%M}",
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"calendar": {
+			"format": { "today": "<span color='#62b086'><b>{}</b></span>" }
+		}
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "muted",
+		"format-icons": { "default": ["vol"] },
+		"on-click": "pavucontrol",
+		"scroll-step": 5
+	},
+
+	"network": {
+		"format-wifi": "{essid}",
+		"format-ethernet": "eth",
+		"format-disconnected": "offline",
+		"tooltip-format": "{ifname}  {ipaddr}",
+		"on-click": "kitty -e nmtui"
+	},
+
+	"battery": {
+		"states": { "warning": 30, "critical": 15 },
+		"format": "bat {capacity}%",
+		"format-charging": "chg {capacity}%",
+		"format-full": "full"
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 8
+	}
+}
